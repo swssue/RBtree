@@ -1,17 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <malloc.h>
- 
-// int 자료형 선언
-typedef int element;
-
-// 구조체 구성
-typedef struct LinkedNode{
-    // 값을 담는 공간
-    element data;
-    // 주소를 담는 공간
-    struct LinkedNode* link;
-}LinkedNode;
+#include "LinkedList.h"
 
 // insert_first
 LinkedNode* insert_first(LinkedNode* head, element value){
@@ -79,37 +69,37 @@ int max_value(LinkedNode* head){
 }
 
 //main
-int main(){
-    LinkedNode *head = NULL;
-
-    for (int i=0;i<5;i++){
-        head = insert_first(head,i);
-        print_node(head);
-    }
-
-    LinkedNode* temp = find_value(head,1);
-    if (temp == NULL) printf("찾는 값이 없습니다.\n");
-    else printf("값을 찾았습니다.\n");
+// int main(){
+//     LinkedNode *head = NULL;
     
-    LinkedNode* pre = head->link;
-    head = insert_pre(head,pre,10);
-    print_node(head);
+//     for (int i=0;i<5;i++){
+//         head = insert_first(head,i);
+//         print_node(head);
+//     }
 
-    pre = head->link;
-    head = delete_pre(head,pre);
-    print_node(head);
+//     LinkedNode* temp = find_value(head,1);
+//     if (temp == NULL) printf("찾는 값이 없습니다.\n");
+//     else printf("값을 찾았습니다.\n");
+    
+//     LinkedNode* pre = head->link;
+//     head = insert_pre(head,pre,10);
+//     print_node(head);
 
-    int max_v = 0;
-    max_v = max_value(head);
-    printf("%d\n",max_v);
+//     pre = head->link;
+//     head = delete_pre(head,pre);
+//     print_node(head);
 
-    for(int i=0;i<5;i++){
-        head = delete_first(head);
-        print_node(head);
-    }
+//     int max_v = 0;
+//     max_v = max_value(head);
+//     printf("%d\n",max_v);
+
+//     for(int i=0;i<5;i++){
+//         head = delete_first(head);
+//         print_node(head);
+//     }
 
     
 
-    return 1;
+//     return 1;
 
-}
+// }
