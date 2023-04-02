@@ -24,15 +24,15 @@ typedef struct {
 // rbtree 구조체 시작
 rbtree *new_rbtree(void);
 // rbtree 구조체 전체 변수 가져오기?
-// void delete_rbtree(rbtree *);
+void delete_rbtree(rbtree *);
 // // 반환 값 node_t 형태
 node_t *rbtree_insert(rbtree *, const key_t);
-// node_t *rbtree_find(const rbtree *, const key_t);
-// node_t *rbtree_min(const rbtree *);
-// node_t *rbtree_max(const rbtree *);
+node_t *rbtree_find(const rbtree *, const key_t);
+node_t *rbtree_min(const rbtree *);
+node_t *rbtree_max(const rbtree *);
 
-// int rbtree_erase(rbtree *, node_t *);
+int rbtree_erase(rbtree *, node_t *);
 
-// int rbtree_to_array(const rbtree *, key_t *, const size_t);
+int rbtree_to_array(const rbtree *, key_t *, const size_t);
 
 #endif  // _RBTREE_H_

@@ -1,0 +1,26 @@
+Makefile은 메크로 같은 개념, 명령어를 한 번에 수행 가능하게 해주는 곳
+사용법 : make test, make clean
+
+temp.h : temp.c에서 만든 함수 정보를 가지고 있는 곳으로 c에서 만든 함수를 모두 적는다.
+사용법 : 함수명;
+
+temp.c : 함수가 수행할 내용이 세부적으로 적혀 있는 곳으로 temp.h를 헤더 파일로 가지고 있어야 한다.
+
+test.c : temp.h를 통해 만들어진 함수를 가지고 수행하도록 하는 main이 있는 곳으로 temp.h를 헤더 파일로 가지고 있어야 한다.
+
+gcc -o test temp.c test.c : test 실행파일을 temp.c와 test.c 파일로 만든다는 의미
+>> temp.c와 test.c를 전차리와 컴파일 과정을 거쳐 오브젝트 파일로 만들고
+만들어진 오브젝트 파일을 링커가 연결하여 실행될 수 있는 하나의 test 실행 파일을 만드는 것.
+
+MAKEFILE 실행 방법
+1. src와 test 폴더 안에 각각 수행할 c 파일을 만든다.
+src > 함수만 들어 있는 소스 파일 ex) src.c
+test > src를 함수 수행이 들어있는 메인 파일 ex) test.c
+
+2. 두 폴더 밖에 Makefile을 만들어서 각각의 폴더의 Makefile이 실행 될 수 있게 통합 적으로 작성한다.
+
+3. src 폴더 안에서는 src.c 파일을 빌드하고, => src.o 생성
+
+4. test 폴더 안에는 빌드한 test.o와 src.o를 링크해서 실행 파일로 만들고 실행한다.
+
+5. 이렇게 일련의 과정이 만들어지면 두 폴더 밖의 Makefile이 두 파일을 실행하는 것이다.

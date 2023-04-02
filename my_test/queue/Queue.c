@@ -1,18 +1,17 @@
 #include <stdio.h>
 #include <stdlib.h>
-#define MAX_QUEUE_SIZE 5
+#include "Queue.h"
+// #define MAX_QUEUE_SIZE 5
 
-// int 자료형 선언
-typedef int element;
+// // int 자료형 선언
+// typedef int element;
 
-// 구조체 선언
-typedef struct Queue{
-    int front;
-    int rear;
-    char arr[MAX_QUEUE_SIZE];
-}Queue;
-
-// 오류 함수
+// // 구조체 선언
+// typedef struct Queue{
+//     int front;
+//     int rear;
+//     char arr[MAX_QUEUE_SIZE];
+// }Queue;
 
 // 선형 큐 초기화
 void init_que(Queue* que){
@@ -65,25 +64,25 @@ void deque(Queue* que){
 
     que->arr[++(que->front)];
 }
-// 메인
-int main(){
-    Queue a;
-    // Queue* p = &a;
-    Queue p;
+// // 메인
+// int main(){
+//     Queue a;
+//     // Queue* p = &a;
+//     Queue p;
 
-    init_que(&p);
+//     init_que(&p);
 
-    enque(&p,10); print_que(&p);
-    enque(&p,20); print_que(&p);
-    enque(&p,30); print_que(&p);
-    enque(&p,30); print_que(&p);
-    enque(&p,30); print_que(&p);
+//     enque(&p,10); print_que(&p);
+//     enque(&p,20); print_que(&p);
+//     enque(&p,30); print_que(&p);
+//     enque(&p,30); print_que(&p);
+//     enque(&p,30); print_que(&p);
 
-    deque(&p); print_que(&p);
-    deque(&p); print_que(&p);
-    deque(&p); print_que(&p);
+//     deque(&p); print_que(&p);
+//     deque(&p); print_que(&p);
+//     deque(&p); print_que(&p);
 
     
     
-    return 1;
-}
+//     return 1;
+// }
