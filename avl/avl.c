@@ -54,22 +54,27 @@ Node* rightRotate(Node* node){
 Node* Balance (Node* node){
   int BF = Balance_cal(node);
   // printf("!!%d",BF);
-  
-  if (BF > 1){
+  //ll
+  if (BF > 1 && Balance_cal(node->left) > 0 ){
     return rightRotate(node);
   }
-  
-  else if (BF < -1){
+  //rr
+  else if (BF < -1 && Balance_cal(node->right) < 0){
     return leftRotate(node);
   }
+  //lr
+  else if (BF > 1 && Balance_cal(node->left) < 0){
+    node->left = leftRotate(node->left);
+    // return node;
+    return rightRotate(node);
+  }
 
-
-
-
-
-
-
-
+  //lr
+  else if (BF < -1 && Balance_cal(node->right) > 0){
+    node->right = rightRotate(node->right);
+    // return node;
+    return leftRotate(node);
+  }
 
   return node;
 }
@@ -121,11 +126,21 @@ void pf(Node* node){
 
 int main(){
   Node* node = NULL;
-  node = insert(node,40);
+  node = insert(node,30);
   // printf("%d->",node->height);
   // printf("%d->",node->key);
-  node=insert(node,30);
+  node=insert(node,40);
+  node=insert(node,35);
+  node=insert(node,50);
+  node=insert(node,60);
+  node=insert(node,50);
+  node=insert(node,25);
   node=insert(node,20);
+  node=insert(node,31);
+  node=insert(node,32);
+  node=insert(node,33);
+  node=insert(node,19);
+
   // pf(node);
   print_node(node,node->height);
   return 1;
