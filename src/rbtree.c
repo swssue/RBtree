@@ -2,9 +2,10 @@
 
 #include <stdlib.h>
 
-// rbtree 초기화
 rbtree *new_rbtree(void) {
-
+  rbtree *p = (rbtree *)calloc(1, sizeof(rbtree));
+  // TODO: initialize struct if needed
+  return p;
 }
 
 void delete_rbtree(rbtree *t) {
@@ -14,7 +15,6 @@ void delete_rbtree(rbtree *t) {
 
 node_t *rbtree_insert(rbtree *t, const key_t key) {
   // TODO: implement insert
-  
   return t->root;
 }
 
