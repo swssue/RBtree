@@ -29,24 +29,29 @@ int main(int argc, char *argv[]) {
     // rbtree_insert(t, 3);
     // inorder(p);
     // rbtree_find(t,3);
-    // rbtree_min(t);
+    
     // rbtree_max(t);
     // delete_rbtree(t);
-    key_t arr1[] = {10, 5, 8, 34, 67, 23,4,68};
+    key_t arr1[] = {10, 5, -8, 34, 67, 0, -23, 156, 24, 2, -12, 26, 35};
     const size_t n1 = sizeof(arr1) / sizeof(arr1[0]);
     insert_arr(t,arr1,n1);
-    
+    node_t* p = t->root->right->right->right;
+    rbtree_to_array(t,arr1,n1);
+    // rbtree_erase(t,p);
+    rbtree_min(t);
+    // rbtree_erase(t,p);
+    rbtree_max(t);
     // printf("%d",t->root->key);
     // for (int i=0; i<n1; i++){
     //     printf("%d =>", arr1[i]);
     // }
     // printf("\n");
-    rbtree_to_array(t,arr1,n1);
+    
     // for (int i=0; i<n1; i++){
     //     printf("%d =>", arr1[i]);
     // }
-    node_t* p = t->root;
-    rbtree_erase(t,p);
-    inorder(t,t->root);
+    
+    
+    // inorder(t,t->root);
     printf("Passed all tests!\n");
 }
