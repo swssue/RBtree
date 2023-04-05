@@ -363,25 +363,6 @@ int rbtree_erase(rbtree *t, node_t *p) {
   return 0;
 }
 
-
-// int inorder_for_array(node_t* nil, node_t * p, key_t *arr, int idx,int n){
-//   if (idx > n){
-//     return 0;
-//   }
-//   if (p->left != nil){
-//     idx = inorder_for_array(nil, p->left, arr, idx, n);
-//   }
-//   arr[idx] = p->key;
-//   if (p->right != nil){
-//     idx = inorder_for_array(nil, p->right, arr, idx+1, n);
-//     return idx;
-//   }
-//   return idx + 1;
-// }
-
-
-
-
 int inorder_for_array(rbtree *t, node_t *p, key_t *arr, const size_t n, int idx){
   if (idx>n) return 0;
 
