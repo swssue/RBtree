@@ -28,7 +28,6 @@ Node* leftRotate(Node* node){
   Node* y = node->right;
   Node* T2 = y->left;
 
-
   y->left = node;
   node->right = T2;
 
@@ -115,11 +114,11 @@ void print_node(Node* node,int height){
     print_node(node->left,height+1);
   }
 }
-
 void pf(Node* node){
   if (node!=NULL){
-    printf("%d(%d)->",node->key,node->height);
+    
     pf(node->left);
+    printf("%d(%d)->",node->key,node->height);
     pf(node->right);
   }
 }
@@ -130,16 +129,9 @@ int main(){
   // printf("%d->",node->height);
   // printf("%d->",node->key);
   node=insert(node,40);
-  node=insert(node,35);
-  node=insert(node,50);
-  node=insert(node,60);
-  node=insert(node,50);
-  node=insert(node,25);
-  node=insert(node,20);
-  node=insert(node,31);
   node=insert(node,32);
-  node=insert(node,33);
-  node=insert(node,19);
+
+ 
 
   // pf(node);
   print_node(node,node->height);

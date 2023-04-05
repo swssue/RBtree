@@ -2,6 +2,10 @@
 .PHONY: clean
 
 CFLAGS=-Wall -g
+
+test: driver
+	./driver
+
 # driver.o와 rbtree.o를 링크하여 driver라는 실행파일 만들어냄 => 메인에서는 해당 명령어를 build로 실행시킴
 driver: driver.o rbtree.o
 

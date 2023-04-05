@@ -11,10 +11,13 @@ void test_init(void) {
 #ifdef SENTINEL
   assert(t->nil != NULL);
   assert(t->root == t->nil);
+
 #else
   assert(t->root == NULL);
+
 #endif
   delete_rbtree(t);
+
 }
 
 // root node should have proper values and pointers
@@ -24,7 +27,7 @@ void test_insert_single(const key_t key) {
   assert(p != NULL);
   assert(t->root == p);
   assert(p->key == key);
-  // assert(p->color == RBTREE_BLACK);  // color of root node should be black
+  assert(p->color == RBTREE_BLACK);  // color of root node should be black
 #ifdef SENTINEL
   assert(p->left == t->nil);
   assert(p->right == t->nil);
@@ -381,3 +384,4 @@ int main(void) {
   test_find_erase_rand(10000, 17);
   printf("Passed all tests!\n");
 }
+

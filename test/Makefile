@@ -2,7 +2,7 @@
  # 타겟으로 작성한 이름과, 디렉토리 내에 이름이 서로 같을 경우, 오작동을 일으키지 않기 위해 .PHONY 사용
 
 # 디버깅 용도(큰 프로젝트에서 디버깅을 하려면 어디에서 오류가 났는지 찾기 어렵기 때문에 아래 명령어로 수행)
-CFLAGS=-I ../src -Wall -g #-DSENTINEL
+CFLAGS=-I ../src -Wall -g -DSENTINEL
 # -I : include 디렉토리 지정 , 상위 디렉토리의 src 디렉토리를 포함시킴(test 폴더에서 src 폴더 내에 있는 파일들이 수행되는데 src 파일들도 디버깅 정보를 보기 위해서 ../src 하는 듯)
 # -Wall : 모든 경고를 표시
 # -g : 디버깅 정보를 포함
@@ -11,7 +11,7 @@ CFLAGS=-I ../src -Wall -g #-DSENTINEL
 test: test-rbtree
 	./test-rbtree
 # test-rbtree 실행
-	valgrind ./test-rbtree 
+	valgrind ./test-rbtree
 # valgrind : 실행 중인 실행파일을 모니터링 누수, 관리 담당
 
 test-rbtree: test-rbtree.o ../src/rbtree.o
